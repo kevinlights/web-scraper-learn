@@ -1,6 +1,9 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '2.3.7.RELEASE'
 }
+
+apply plugin: 'io.spring.dependency-management'
 
 group 'com.gjh.learn'
 version '1.0-SNAPSHOT'
@@ -13,11 +16,14 @@ repositories {
 }
 
 dependencies {
-    implementation 'junit:junit:4.12'
+//    implementation 'junit:junit:4.12'
     compile group: 'org.jsoup', name: 'jsoup', version: '1.13.1'
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
     testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 

@@ -55,7 +55,7 @@ public class JSoupToolsTest {
         while (iterator.hasNext()) {
             Element row = iterator.next();
             String repoName = row.select("h1.h3 a").text();
-            String repoDesc = row.select("p.col-9").text();
+            String repoDesc = row.select("p.col-9") != null ? row.select("p.col-9").text() : "";
             String repoLang = row.select("span.d-inline-block span:nth-of-type(2)").text();
             String repoStars = row.select("a.muted-link:nth-of-type(1)").text();
             String repoForks = row.select("a.muted-link:nth-of-type(2)").text();

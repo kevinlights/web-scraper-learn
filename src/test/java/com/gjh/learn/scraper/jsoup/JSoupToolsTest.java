@@ -60,7 +60,8 @@ public class JSoupToolsTest {
             String repoStars = row.select("a.muted-link:nth-of-type(1)").text();
             String repoForks = row.select("a.muted-link:nth-of-type(2)").text();
             String repoUrl = row.select("h1.h3 a").attr("href");
-            LOG.info("repoName={}\trepoDesc={}\trepoLang={}\trepoStars={}\trepoForks={}\trepoUrl={}", repoName, repoDesc, repoLang, repoStars, repoForks, repoUrl);
+            String repoNewStars = row.select("span.d-inline-block.float-sm-right").text();
+            LOG.info("repoName={}\trepoDesc={}\trepoLang={}\trepoStars={}\trepoForks={}\trepoUrl={}\trepoNewStars={}", repoName, repoDesc, repoLang, repoStars, repoForks, repoUrl, repoNewStars);
         }
 
     }
